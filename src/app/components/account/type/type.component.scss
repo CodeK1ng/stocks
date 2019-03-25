@@ -1,0 +1,30 @@
+.account-type-container {
+  display: flex;
+  flex-direction: row;
+  // align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.account-type {
+  width: 200px;
+  margin: 10px;
+}
+
+.account-type-selected {
+  width: 200px;
+  margin: 10px;
+  border: 2px solid green;
+}
+
+.account-type-image {
+  margin: 5px;
+}
+
+.bottom-content {
+  text-align: center;
+}
+
+.top-content {
+  text-align: center;
+}

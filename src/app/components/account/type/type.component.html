@@ -1,0 +1,38 @@
+<nz-divider></nz-divider>
+<div class="top-content">
+  <h1>Select an Account Type</h1>
+</div>
+<div class="account-type-container">
+  <nz-card nzHoverable [nzCover]="individaul" (click)="selectedAccount('individual')"
+    [ngClass]="selectIndivual ? 'account-type-selected' : 'account-type'">
+    <nz-card-meta nzTitle="Individual" nzDescription="Learn More"></nz-card-meta>
+  </nz-card>
+  <ng-template #individaul>
+    <img alt="example" src="assets/images/boss.png" class="account-type-image" />
+  </ng-template>
+  <nz-card nzHoverable [nzCover]="under18" [ngClass]="selectUnder18 ? 'account-type-selected' : 'account-type'"
+    (click)="selectedAccount('under18')">
+    <nz-card-meta nzTitle="Under 18" nzDescription="Learn More"></nz-card-meta>
+  </nz-card>
+  <ng-template #under18>
+    <img alt="example" src="assets/images/boy2.png" class="account-type-image" />
+  </ng-template>
+  <nz-card nzHoverable [nzCover]="corporate" [ngClass]="selectCorporate ? 'account-type-selected' : 'account-type'"
+    (click)="selectedAccount('corporate')">
+    <nz-card-meta nzTitle="Corporate Body" nzDescription="Learn More"></nz-card-meta>
+  </nz-card>
+  <ng-template #corporate>
+    <img alt="example" src="assets/images/bank.png" class="account-type-image" />
+  </ng-template>
+  <nz-card nzHoverable [nzCover]="other" [ngClass]="selectOther ? 'account-type-selected' : 'account-type'"
+    (click)="selectedAccount('other')">
+    <nz-card-meta nzTitle="Other Legal Entity" nzDescription="Learn More"></nz-card-meta>
+  </nz-card>
+  <ng-template #other>
+    <img alt="example" src="assets/images/lawyer.png" class="account-type-image" />
+  </ng-template>
+</div>
+<nz-divider></nz-divider>
+<div class="bottom-content">
+  <button nz-button nzType="default" [nzSize]="'large'">Save & Proceed<i nz-icon type="right"></i></button>
+</div>
