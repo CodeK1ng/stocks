@@ -1,3 +1,4 @@
+import { StepsService } from './../accounts-service/steps.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,11 +13,13 @@ export class TypeComponent implements OnInit {
   selectOther = false;
   selected = false;
 
-  stepNumber = 0;
+  current: number;
+  constructor(private steps: StepsService) {}
 
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.steps.currentStep.subscribe(step => (this.current = step));
+    this.steps.changeStep(0);
+  }
 
   selectedAccount(type: string): void {
     switch (type) {

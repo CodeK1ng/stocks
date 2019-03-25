@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StepsService } from '../accounts-service/steps.service';
 
 @Component({
   selector: 'app-personal-info',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-
-  constructor() { }
+  current: number;
+  constructor(private steps: StepsService) {}
 
   ngOnInit() {
+    this.steps.currentStep.subscribe(step => (this.current = step));
+    this.steps.changeStep(1);
   }
-
 }

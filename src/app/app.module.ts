@@ -16,8 +16,14 @@ import { PersonalInfoComponent } from './components/account/personal-info/person
 import { AddressInfoComponent } from './components/account/address-info/address-info.component';
 import { TaxInfoComponent } from './components/account/tax-info/tax-info.component';
 import { BankInfoComponent } from './components/account/bank-info/bank-info.component';
+import { Routes, RouterModule } from '@angular/router';
 
 registerLocaleData(en);
+
+const appRoutes: Routes = [
+  { path: 'account-type', component: TypeComponent },
+  { path: 'personal-info', component: PersonalInfoComponent }
+];
 
 @NgModule({
   declarations: [
@@ -36,9 +42,10 @@ registerLocaleData(en);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

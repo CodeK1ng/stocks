@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StepsService } from '../accounts-service/steps.service';
 
 @Component({
   selector: 'app-steps',
@@ -6,11 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./steps.component.scss']
 })
 export class StepsComponent implements OnInit {
-  current = 0;
+  current: number;
+  constructor(private steps: StepsService) {}
 
-  @Input() stepNumberIn: number;
-
-  constructor() {}
-
-  ngOnInit() {}
+  ngOnInit(): void {
+    this.steps.currentStep.subscribe(step => (this.current = step));
+  }
 }
