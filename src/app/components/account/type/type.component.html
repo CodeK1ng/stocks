@@ -1,3 +1,6 @@
+<nz-divider nzText="Progress"></nz-divider>
+<app-steps></app-steps>
+<nz-divider></nz-divider>
 <div class="top-content">
   <h1>Select an Account Type</h1>
 </div>
@@ -33,5 +36,6 @@
 </div>
 <nz-divider></nz-divider>
 <div class="bottom-content">
-  <button nz-button nzType="default" [nzSize]="'large'">Save & Proceed<i nz-icon type="caret-right"></i></button>
+  <button nz-button nzType="default" [nzSize]="'large'" (click)="onSubmit()">Save & Proceed<i nz-icon
+      type="caret-right"></i></button>
 </div>
