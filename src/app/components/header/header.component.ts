@@ -18,4 +18,8 @@ export class HeaderComponent implements OnInit {
   toHomePage() {
     this.route.navigate(['home']);
   }
+
+  toProfilePage() {
+    this.route.navigate(['profile']);
+  }
 }
