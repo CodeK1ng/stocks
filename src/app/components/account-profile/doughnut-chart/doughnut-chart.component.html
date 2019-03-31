@@ -1,20 +1,47 @@
 <div class="profile-container">
-  <nz-card nzTitle="Account Details" [nzExtra]="extraTemplate">
-    <div class="account-data">
-      <div id="profile-chart">
-        <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType"></canvas>
+   <nz-card nzTitle="Account Details" [nzExtra]="extraTemplate">
+      <div class="account-data">
+         <nz-card style="width:200px;" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+            <div class="personal-details">
+               <nz-avatar [nzShape]="'square'" [nzSize]="120" [nzIcon]="'user'"></nz-avatar>
+               <h4 style="margin-top: 5px;">Name: Joseph Malama</h4>
+               <h4 style="margin-top: 5px;">TODO: Add more details</h4>
+            </div>
+         </nz-card>
+         <div id="profile-chart">
+            <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType"></canvas>
+         </div>
+         <div>
+            <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+               <thead>
+                  <tr>
+                     <th>Item</th>
+                     <th>Amount (ZMW)</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let data of basicTable.data">
+                     <td>{{ data.name }}</td>
+                     <td>{{ data.age }}</td>
+                  </tr>
+               </tbody>
+            </nz-table>
+         </div>
       </div>
-      <div>
-        <p>Card content</p>
-        <p>Card content</p>
-        <p>Card content</p>
+   </nz-card>
+   <ng-template #extraTemplate>
+      <div style="display: flex">
+         <p style="margin-right: 25px;">{{'Current Holdings' | uppercase}}</p>
+         <p>{{'Profit and Loss' | uppercase}}</p>
       </div>
-    </div>
-  </nz-card>
-  <ng-template #extraTemplate>
-    <div style="display: flex">
-      <p style="margin-right: 25px;">{{'Current Holdings' | uppercase}}</p>
-      <p>{{'Profit and Loss' | uppercase}}</p>
-    </div>
-  </ng-template>
+   </ng-template>
+   <ng-template #actionSetting>
+      <i nz-icon type="setting"></i>
+   </ng-template>
+   <ng-template #actionEdit>
+      <i nz-icon type="edit"></i>
+   </ng-template>
+   <ng-template #actionEllipsis>
+      <i nz-icon type="ellipsis"></i>
+   </ng-template>
 </div>

@@ -1,3 +1,24 @@
-<p>
-  option-portfolio works!
-</p>
+<div class="option-portfolio">
+   <nz-card nzTitle="Transaction History" [nzExtra]="extraTemplate">
+      <div>
+         <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+            <thead>
+               <tr>
+                  <th>Item</th>
+                  <th>Amount (ZMW)</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let data of basicTable.data">
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.age }}</td>
+               </tr>
+            </tbody>
+         </nz-table>
+      </div>
+   </nz-card>
+   <ng-template #extraTemplate>
+      <p>Something here</p>
+   </ng-template>
+
+</div>
