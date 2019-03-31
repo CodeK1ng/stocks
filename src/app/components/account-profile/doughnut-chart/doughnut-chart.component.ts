@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doughnut-chart.component.scss']
 })
 export class DoughnutChartComponent implements OnInit {
-
-  public chartLabels = ['Label 1', 'Label 2', 'Label 3'];
+  public chartLabels = ['Account Value', 'Buying Power', 'Cash'];
   public chartData = [120, 150, 180];
   public chartType = 'doughnut';
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,3 +1,20 @@
-<div>
-  <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType"></canvas>
+<div class="profile-container">
+  <nz-card nzTitle="Account Details" [nzExtra]="extraTemplate">
+    <div class="account-data">
+      <div id="profile-chart">
+        <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType"></canvas>
+      </div>
+      <div>
+        <p>Card content</p>
+        <p>Card content</p>
+        <p>Card content</p>
+      </div>
+    </div>
+  </nz-card>
+  <ng-template #extraTemplate>
+    <div style="display: flex">
+      <p style="margin-right: 25px;">{{'Current Holdings' | uppercase}}</p>
+      <p>{{'Profit and Loss' | uppercase}}</p>
+    </div>
+  </ng-template>
 </div>

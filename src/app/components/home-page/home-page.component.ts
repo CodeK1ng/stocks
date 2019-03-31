@@ -14,4 +14,8 @@ export class HomePageComponent implements OnInit {
   toCreateAccount(): void {
     this.route.navigate(['account-type']);
   }
+
+  toLogin(): void {
+    this.route.navigate(['login']);
+  }
 }

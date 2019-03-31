@@ -22,4 +22,20 @@ export class HeaderComponent implements OnInit {
   toProfilePage() {
     this.route.navigate(['profile']);
   }
+
+  toMarkertPage() {
+    this.route.navigate(['market']);
+  }
+
+  toTutorialsPage() {
+    this.route.navigate(['tutorials']);
+  }
+
+  toLoginPage() {
+    this.route.navigate(['login']);
+  }
+
+  toAdminPage() {
+    this.route.navigate(['admin']);
+  }
 }

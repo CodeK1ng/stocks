@@ -14,16 +14,32 @@ import en from '@angular/common/locales/en';
 import { HeaderComponent } from './components/header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { TutorialsComponent } from './components/tutorials/tutorials.component';
+import { MarketComponent } from './components/market/market.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 registerLocaleData(en);
 
 const appRoutes: Routes = [
+  { path: 'admin', component: AdminComponent },
+  { path: 'tutorials', component: TutorialsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'market', component: MarketComponent },
   { path: 'home', component: HomePageComponent },
   { path: '', component: HomePageComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomePageComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomePageComponent,
+    TutorialsComponent,
+    MarketComponent,
+    LoginComponent,
+    AdminComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
