@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoughnutChartComponent implements OnInit {
 
+  public chartLabels = ['Label 1', 'Label 2', 'Label 3'];
+  public chartData = [120, 150, 180];
+  public chartType = 'doughnut';
   constructor() { }
 
   ngOnInit() {
