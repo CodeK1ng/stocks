@@ -1,3 +1,4 @@
+import { ChartsModule } from 'ng2-charts';
 import { AccountProfileModule } from './components/account-profile/account-profile.module';
 import { AccountsModule } from './components/account/accounts.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,6 +19,10 @@ import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import { MarketComponent } from './components/market/market.component';
 import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
+import * as more from 'highcharts/highcharts-more.src';
+import * as exporting from 'highcharts/modules/exporting.src';
+import * as highstock from 'highcharts/modules/stock.src';
 
 registerLocaleData(en);
 
@@ -48,10 +53,17 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule,
     AccountsModule,
+    ChartModule,
     AccountProfileModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true })
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    {
+      provide: HIGHCHARTS_MODULES,
+      useFactory: () => [more, exporting, highstock]
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
