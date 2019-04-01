@@ -8,6 +8,7 @@ import { StockChart } from 'angular-highcharts';
 })
 export class MarketComponent implements OnInit {
   inputValue1 = '';
+  selectedValue = 'BATA';
   stock: StockChart;
   constructor() {}
 
@@ -16,9 +17,9 @@ export class MarketComponent implements OnInit {
       rangeSelector: {
         selected: 1
       },
-      title: {
-        text: 'Bata Stock Price'
-      },
+      // title: {
+      //   text: `${this.selectedValue} Stock Price`
+      // },
       credits: {
         enabled: false
       },
