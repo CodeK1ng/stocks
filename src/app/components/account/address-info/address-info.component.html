@@ -1,11 +1,13 @@
 <nz-divider nzText="Progress"></nz-divider>
 <app-steps></app-steps>
 <nz-divider></nz-divider>
-<p>
-  address-info works!
-</p>
+<div class="address-info">
+   <p>
+      address-info works!
+   </p>
 
-<nz-button-group [nzSize]="'large'" class="buttons">
-  <button nz-button nzType="default" (click)="onBackClicked()"><i nz-icon type="caret-left"></i>Back</button>
-  <button nz-button nzType="default" (click)="onSubmit()">Save & Proceed<i nz-icon type="caret-right"></i></button>
-</nz-button-group>
+   <nz-button-group [nzSize]="'large'" class="buttons">
+      <button nz-button nzType="default" (click)="onBackClicked()"><i nz-icon type="caret-left"></i>Back</button>
+      <button nz-button nzType="default" (click)="onSubmit()">Save & Proceed<i nz-icon type="caret-right"></i></button>
+   </nz-button-group>
+</div>

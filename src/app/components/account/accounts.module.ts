@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -20,35 +20,36 @@ import { AccountsNavigatorComponent } from '../../components/account/accounts-na
 registerLocaleData(en);
 
 const appRoutes: Routes = [
-  { path: 'account-type', component: TypeComponent },
-  { path: 'personal-info', component: PersonalInfoComponent },
-  { path: 'address-info', component: AddressInfoComponent },
-  { path: 'tax-info', component: TaxInfoComponent },
-  { path: 'bank-info', component: BankInfoComponent },
-  { path: 'create-account', component: AccountsNavigatorComponent }
+   { path: 'account-type', component: TypeComponent },
+   { path: 'personal-info', component: PersonalInfoComponent },
+   { path: 'address-info', component: AddressInfoComponent },
+   { path: 'tax-info', component: TaxInfoComponent },
+   { path: 'bank-info', component: BankInfoComponent },
+   { path: 'create-account', component: AccountsNavigatorComponent }
 ];
 
 @NgModule({
-  declarations: [
-    AccountsComponent,
-    TypeComponent,
-    StepsComponent,
-    PersonalInfoComponent,
-    AddressInfoComponent,
-    TaxInfoComponent,
-    BankInfoComponent,
-    AccountsNavigatorComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgZorroAntdModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    RouterModule.forChild(appRoutes)
-  ],
-  exports: [RouterModule],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AccountsComponent]
+   declarations: [
+      AccountsComponent,
+      TypeComponent,
+      StepsComponent,
+      PersonalInfoComponent,
+      AddressInfoComponent,
+      TaxInfoComponent,
+      BankInfoComponent,
+      AccountsNavigatorComponent
+   ],
+   imports: [
+      BrowserModule,
+      NgZorroAntdModule,
+      FormsModule,
+      HttpClientModule,
+      BrowserAnimationsModule,
+      ReactiveFormsModule,
+      RouterModule.forChild(appRoutes)
+   ],
+   exports: [RouterModule],
+   providers: [{ provide: NZ_I18N, useValue: en_US }],
+   bootstrap: [AccountsComponent]
 })
 export class AccountsModule {}
