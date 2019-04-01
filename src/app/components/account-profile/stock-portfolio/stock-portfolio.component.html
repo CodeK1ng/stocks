@@ -1,7 +1,7 @@
 <div class="stock-portfolio">
    <nz-card nzTitle="Stock Portfolio" [nzExtra]="extraTemplate">
       <div>
-         <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+         <nz-table #basicTable1 [nzData]="listOfData3" [nzShowPagination]="false">
             <thead>
                <tr>
                   <th>Name</th>
@@ -14,14 +14,14 @@
                </tr>
             </thead>
             <tbody>
-               <tr *ngFor="let data of basicTable.data">
+               <tr *ngFor="let data of basicTable1.data">
                   <td>{{ data.name }}</td>
-                  <td>{{ data.age }}</td>
-                  <td>{{ data.name }}</td>
-                  <td>{{ data.age }}</td>
-                  <td>{{ data.name }}</td>
-                  <td>{{ data.age }}</td>
-                  <td>{{ data.age }}</td>
+                  <td>{{ data.symbol }}</td>
+                  <td>{{ data.shares }}</td>
+                  <td>{{ data.purchase }}</td>
+                  <td>{{ data.price }}</td>
+                  <td>{{ data.change }}</td>
+                  <td>{{ data.profit }}</td>
                </tr>
             </tbody>
          </nz-table>

@@ -29,24 +29,54 @@ export class StockPortfolioComponent implements OnInit {
          address: 'Funds to Invest'
       }
    ];
-   public listOfData = [
+   public listOfData3 = [
       {
          key: '1',
-         name: 'Profit/Loss on Current Holdings',
+         name: 'Bata',
+         symbol: 'BATA',
+         shares: 51,
+         purchase: 53.87,
+         price: 47.74,
+         change: 276.82,
+         profit: 21.72,
          age: 0.0,
          address: 'Account Balance Carried Forward'
       },
       {
          key: '2',
-         name: 'Brokerage and Statutory Costs',
+         name: 'Lafarge',
+         symbol: 'LAFARGE',
+         shares: 108,
+         purchase: 22.49,
+         price: 22.15,
+         change: 36.72,
+         profit: 21.52,
          age: 0.0,
-         address: 'Brokerage and Statutory Costs'
+         address: 'Account Balance Carried Forward'
       },
       {
          key: '3',
-         name: 'Funds to Invest',
-         age: 32000,
-         address: 'Funds to Invest'
+         name: 'Puma',
+         symbol: 'PUMA',
+         shares: 113,
+         purchase: 21.46,
+         price: 23.99,
+         change: 285.89,
+         profit: 25.43,
+         age: 0.0,
+         address: 'Account Balance Carried Forward'
+      },
+      {
+         key: '4',
+         name: 'Airtel',
+         symbol: 'ATEL',
+         shares: 26,
+         purchase: 94.71,
+         price: 101.38,
+         change: 173.42,
+         profit: 20.02,
+         age: 0.0,
+         address: 'Account Balance Carried Forward'
       }
    ];
    constructor(private route: Router) {}
