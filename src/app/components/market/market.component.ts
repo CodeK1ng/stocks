@@ -7,6 +7,7 @@ import { StockChart } from 'angular-highcharts';
   styleUrls: ['./market.component.scss']
 })
 export class MarketComponent implements OnInit {
+  inputValue1 = '';
   stock: StockChart;
   constructor() {}
 

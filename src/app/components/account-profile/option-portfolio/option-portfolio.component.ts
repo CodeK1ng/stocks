@@ -9,21 +9,21 @@ export class OptionPortfolioComponent implements OnInit {
    public listOfData = [
       {
          key: '1',
-         name: 'Profit/Loss on Current Holdings',
-         age: 0.0,
-         address: 'New York No. 1 Lake Park'
+         name: '24-03-2019',
+         age: 32000,
+         address: 'Account Balance Carried Forward'
       },
       {
          key: '2',
-         name: 'Brokerage and Statutory Costs',
+         name: '23-03-2019',
          age: 0.0,
-         address: 'London No. 1 Lake Park'
+         address: 'Brokerage and Statutory Costs'
       },
       {
          key: '3',
-         name: 'Funds to Invest',
+         name: '12-03-2019',
          age: 32000,
-         address: 'Sidney No. 1 Lake Park'
+         address: 'Funds to Invest'
       }
    ];
    constructor() {}

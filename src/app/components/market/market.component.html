@@ -1,6 +1,28 @@
 <div class="market-page">
-  <div [chart]="stock"></div>
-  <div class="listed-exchange">
-
-  </div>
+   <div nz-row>
+      <div nz-col nzSpan="8">
+         <nz-card nzTitle="Bid Price" style="margin: 10px;">
+            <nz-input-group [nzAddOnBeforeIcon]="'setting'">
+               <input type="text" nz-input [(ngModel)]="inputValue1" />
+            </nz-input-group>
+            <nz-input-group [nzAddOnBeforeIcon]="'setting'" style="margin-top: 5px;">
+               <input type="text" nz-input [(ngModel)]="inputValue1" />
+            </nz-input-group>
+            <div class="bid-buttons" style="margin-top: 5px;">
+               <button nz-button style="margin: 5px;">Limit</button>
+               <button nz-button style="margin: 5px;">Market</button>
+            </div>
+            <nz-input-group [nzAddOnBeforeIcon]="'setting'" style="margin-top: 5px;">
+               <input type="text" nz-input [(ngModel)]="inputValue1" />
+            </nz-input-group>
+            <button nz-button style="margin: 5px;">Buy Bata Shares</button>
+         </nz-card>
+         <nz-card nzTitle="Ask Price" style="margin: 10px;">
+            <p>Card content</p>
+         </nz-card>
+      </div>
+      <div nz-col nzSpan="16">
+         <div [chart]="stock"></div>
+      </div>
+   </div>
 </div>

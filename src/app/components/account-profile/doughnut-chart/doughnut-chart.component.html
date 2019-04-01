@@ -1,13 +1,13 @@
 <div class="profile-container">
    <nz-card nzTitle="Account Details" [nzExtra]="extraTemplate">
       <div class="account-data">
-         <nz-card style="width:200px;" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
+         <!-- <nz-card style="width:200px;" [nzActions]="[actionSetting, actionEdit, actionEllipsis]">
             <div class="personal-details">
                <nz-avatar [nzShape]="'square'" [nzSize]="120" [nzIcon]="'user'"></nz-avatar>
                <h4 style="margin-top: 5px;">Name: Joseph Malama</h4>
                <h4 style="margin-top: 5px;">TODO: Add more details</h4>
             </div>
-         </nz-card>
+         </nz-card> -->
          <div id="profile-chart">
             <canvas baseChart [data]="chartData" [labels]="chartLabels" [chartType]="chartType"></canvas>
          </div>
