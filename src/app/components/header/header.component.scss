@@ -1,6 +1,14 @@
 .logo {
-  width: 120px;
-  height: 31px;
-  margin: 16px 24px 16px 0;
-  float: left;
+   width: 220px;
+   height: 31px;
+   margin: 16px 24px 16px 0;
+   float: left;
+   background-image: url('https://i.ibb.co/jTRqjkv/logo.png');
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.logo:hover {
+   cursor: pointer;
 }

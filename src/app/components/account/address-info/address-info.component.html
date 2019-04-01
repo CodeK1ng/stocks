@@ -2,9 +2,103 @@
 <app-steps></app-steps>
 <nz-divider></nz-divider>
 <div class="address-info">
-   <p>
-      address-info works!
-   </p>
+   <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event, validateForm.value)">
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7" nzRequired>House Number</nz-form-label>
+         <nz-form-control [nzSpan]="12" nzHasFeedback>
+            <input nz-input formControlName="userName" placeholder="Enter First Name" />
+            <nz-form-explain *ngIf="
+                      (validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors) ||
+                      validateForm.get('userName')?.pending
+                    ">
+               <ng-container *ngIf="validateForm.get('userName')?.hasError('required')">
+                  Please Enter House Number!
+               </ng-container>
+               <!-- <ng-container *ngIf="validateForm.get('userName')?.hasError('duplicated')">
+                        The name is redundant!
+                     </ng-container> -->
+               <ng-container *ngIf="validateForm.get('userName')?.pending">
+                  Validating...
+               </ng-container>
+            </nz-form-explain>
+         </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7" nzRequired>Postal Address</nz-form-label>
+         <nz-form-control [nzSpan]="12" nzHasFeedback>
+            <input nz-input formControlName="userName" placeholder="Enter Middle Name" />
+            <nz-form-explain *ngIf="
+                       (validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors) ||
+                       validateForm.get('userName')?.pending
+                     ">
+               <ng-container *ngIf="validateForm.get('userName')?.hasError('required')">
+                  Please Enter Postal Address!
+               </ng-container>
+               <!-- <ng-container *ngIf="validateForm.get('userName')?.hasError('duplicated')">
+                         The name is redundant!
+                      </ng-container> -->
+               <ng-container *ngIf="validateForm.get('userName')?.pending">
+                  Validating...
+               </ng-container>
+            </nz-form-explain>
+         </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7" nzRequired>Street Road</nz-form-label>
+         <nz-form-control [nzSpan]="12" nzHasFeedback>
+            <input nz-input formControlName="userName" placeholder="Enter Last Name" />
+            <nz-form-explain *ngIf="
+                        (validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors) ||
+                        validateForm.get('userName')?.pending
+                      ">
+               <ng-container *ngIf="validateForm.get('userName')?.hasError('required')">
+                  Please Enter Street Road!
+               </ng-container>
+               <!-- <ng-container *ngIf="validateForm.get('userName')?.hasError('duplicated')">
+                          The name is redundant!
+                       </ng-container> -->
+               <ng-container *ngIf="validateForm.get('userName')?.pending">
+                  Validating...
+               </ng-container>
+            </nz-form-explain>
+         </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7" nzRequired>Town</nz-form-label>
+         <nz-form-control [nzSpan]="12" nzHasFeedback>
+            <input nz-input formControlName="userName" placeholder="Enter First Name" />
+            <nz-form-explain *ngIf="
+                         (validateForm.get('userName')?.dirty && validateForm.get('userName')?.errors) ||
+                         validateForm.get('userName')?.pending
+                       ">
+               <ng-container *ngIf="validateForm.get('userName')?.hasError('required')">
+                  Please Enter Town!
+               </ng-container>
+               <!-- <ng-container *ngIf="validateForm.get('userName')?.hasError('duplicated')">
+                           The name is redundant!
+                        </ng-container> -->
+               <ng-container *ngIf="validateForm.get('userName')?.pending">
+                  Validating...
+               </ng-container>
+            </nz-form-explain>
+         </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7" nzRequired>Resdential Address</nz-form-label>
+         <nz-form-control [nzSpan]="12">
+            <textarea formControlName="comment" nz-input rows="2" placeholder="Enter Residential Address"></textarea>
+            <nz-form-explain
+               *ngIf="validateForm.get('comment')?.dirty && validateForm.get('comment')?.hasError('required')">Please
+               Enter Address!</nz-form-explain>
+         </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+         <nz-form-control [nzOffset]="7" [nzSpan]="12">
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+            <button nz-button (click)="resetForm($event)">Reset</button>
+         </nz-form-control>
+      </nz-form-item>
+   </form>
 
    <nz-button-group [nzSize]="'large'" class="buttons">
       <button nz-button nzType="default" (click)="onBackClicked()"><i nz-icon type="caret-left"></i>Back</button>

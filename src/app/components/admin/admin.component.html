@@ -1,42 +1,76 @@
 <div class="admin-page">
-  <nz-card nzTitle="Order Book" [nzExtra]="extraTemplate">
-    <div>
+   <nz-card nzTitle="Order Book" [nzExtra]="extraTemplate">
       <div>
-        <p>Card content</p>
-        <p>Card content</p>
-        <p>Card content</p>
+         <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+            <thead>
+               <tr>
+                  <th>Sum <i nz-icon nzType="caret-up"></i></th>
+                  <th>Total <i nz-icon nzType="caret-up"></i></th>
+                  <th>Size <i nz-icon nzType="caret-up"></i></th>
+                  <th>Bid <i nz-icon nzType="caret-down"></i></th>
+                  <th>Ask <i nz-icon nzType="caret-up"></i></th>
+                  <th>Size <i nz-icon nzType="caret-down"></i></th>
+                  <th>Total <i nz-icon nzType="caret-up"></i></th>
+                  <th>Sum <i nz-icon nzType="caret-down"></i></th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let data of basicTable.data">
+                  <td>{{ data.sum }}</td>
+                  <td>{{ data.total }}</td>
+                  <td>{{ data.size }}</td>
+                  <td>{{ data.bid }}</td>
+                  <td>{{ data.ask }}</td>
+                  <td>{{ data.size2 }}</td>
+                  <td>{{ data.total2 }}</td>
+                  <td>{{ data.sum2 }}</td>
+               </tr>
+            </tbody>
+         </nz-table>
       </div>
-    </div>
-  </nz-card>
-  <ng-template #extraTemplate>
-    <p>Something here</p>
-  </ng-template>
+   </nz-card>
+   <ng-template #extraTemplate>
+      <!-- <p>Something here</p> -->
+   </ng-template>
 
-  <nz-card nzTitle="Open Orders" [nzExtra]="extraTemp" style="margin-top: 25px;">
-    <div>
+   <nz-card nzTitle="CSD" [nzExtra]="extraTemp" style="margin-top: 25px;">
       <div>
-        <p>Card content</p>
-        <p>Card content</p>
-        <p>Card content</p>
+         <nz-table #basicTable [nzData]="listOfData" [nzShowPagination]="false">
+            <thead>
+               <tr>
+                  <th>Order Date</th>
+                  <th>Type</th>
+                  <th>Bid/Ask</th>
+                  <th>Units Filled</th>
+                  <th>Units Total</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let data of basicTable.data">
+                  <td>{{ data.date }}</td>
+                  <td>{{ data.type }}</td>
+                  <td>{{ data.size }}</td>
+                  <td>{{ data.bid }}</td>
+                  <td>{{ data.ask }}</td>
+               </tr>
+            </tbody>
+         </nz-table>
       </div>
-    </div>
-  </nz-card>
-  <ng-template #extraTemp>
-    <p>Something here</p>
-  </ng-template>
+   </nz-card>
+   <ng-template #extraTemp>
+      <!-- <p>Something here</p> -->
+   </ng-template>
 
-  <nz-card nzTitle="Market History" [nzExtra]="extraTemp" style="margin-top: 25px;">
-    <div>
+   <nz-card nzTitle="Market History" [nzExtra]="extraTemp" style="margin-top: 25px;">
       <div>
-        <p>Card content</p>
-        <p>Card content</p>
-        <p>Card content</p>
+         <div>
+            <h1>TODO</h1>
+         </div>
       </div>
-    </div>
-  </nz-card>
-  <ng-template #extraTemp>
-    <p>Something here</p>
-  </ng-template>
+   </nz-card>
+   <ng-template #extraTemp>
+      <!-- <p>Something here</p> -->
+   </ng-template>
 
 
 </div>
